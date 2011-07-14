@@ -1,0 +1,49 @@
+*javax.xml.ws.soap.Addressing* *Addressing* 
+ This feature represents the use of WS-Addressing with either
+ the SOAP 1.1/HTTP or
+
+public interface class Addressing
+
+  implements |java.lang.annotation.Annotation|
+
+|javax.xml.ws.soap.Addressing_Description|
+|javax.xml.ws.soap.Addressing_Fields|
+|javax.xml.ws.soap.Addressing_Constructors|
+|javax.xml.ws.soap.Addressing_Methods|
+
+================================================================================================================================
+
+*javax.xml.ws.soap.Addressing_Description*
+
+This feature represents the use of WS-Addressing with either the SOAP 1.1/HTTP or SOAP 1.2/HTTP binding. Using this feature 
+with any other binding is NOT required. 
+
+The following describes the effects of this feature with respect to be enabled or disabled: 
+
+ENABLED: In this Mode, WS-Addressing will be enabled. At runtime, WS-Addressing headers MUST be consumed by the receiver and 
+produced by the sender even if the WSDL declares otherwise. The mustUnderstand="0" attribute MUST be used on the response 
+WS-Addressing headers. DISABLED: In this Mode, WS-Addressing will be disabled even if an associated WSDL specifies otherwise. 
+At runtime, WS-Addressing headers MUST NOT be used. WS-Addressing may be explicitly disabled to prevent a JAX-WS implementation 
+from consuming and producing WS-Addressing headers. If an application has implemented WS-Addressing itself, it MUST explicitly 
+disable this feature. Not doing so may break compatibility with future versions of JAX-WS. 
+
+The required property can be used to specify if WS-Addressing headers MUST be present on incoming messages. By default the 
+required property is false. 
+
+The definition of this annotation is incomplete in this release of JAX-WS as there is no standard way to convey the use of 
+WS-Addressing via a WSDL and there is no standard definition for the default value of WS-Addressing Action headers; however, 
+the runtime behavior of this annotation is well-defined. It is intended that a future version of JAX-WS will require the use of 
+the standard mechanism to convey the use of WS-Addressing via WSDL and default values for WS-Addressing Action headers as 
+defined by the W3C WG on WS-Addressing. 
+
+To write a portable endpoint and its corresponding client with this version of JAX-WS, an endpoint MUST explicitly specify what 
+WS-Addressing Actions are to be used via the (|javax.xml.ws.Action|) and (|javax.xml.ws.FaultAction|) annotations. The client 
+MUST explicitly enable addresssing via the (|javax.xml.ws.soap.AddressingFeature|) , and for each invocation, the client MUST 
+explicitly set the (|javax.xml.ws.BindingProvider|) . After the W3C WG on WS-Addressing has specified how the use of 
+WS-Addressing is specified in the WSDL, and what the default value must be for Action headers, a future version of JAX-WS will 
+remove these requirements. 
+
+See Web Services Addressing - Core and Web Services Addressing 1.0 - SOAP Binding for more information on WS-Addressing. 
+
+
+

@@ -1,0 +1,62 @@
+*javax.xml.bind.annotation.adapters.NormalizedStringAdapter* *NormalizedStringAdapter* XmlAdapterto handle xs:normalizedString.
+
+public final class NormalizedStringAdapter
+  extends    |javax.xml.bind.annotation.adapters.XmlAdapter|
+
+|javax.xml.bind.annotation.adapters.NormalizedStringAdapter_Description|
+|javax.xml.bind.annotation.adapters.NormalizedStringAdapter_Fields|
+|javax.xml.bind.annotation.adapters.NormalizedStringAdapter_Constructors|
+|javax.xml.bind.annotation.adapters.NormalizedStringAdapter_Methods|
+
+================================================================================================================================
+
+*javax.xml.bind.annotation.adapters.NormalizedStringAdapter_Constructors*
+|javax.xml.bind.annotation.adapters.NormalizedStringAdapter()|
+
+*javax.xml.bind.annotation.adapters.NormalizedStringAdapter_Methods*
+|javax.xml.bind.annotation.adapters.NormalizedStringAdapter.isWhiteSpaceExceptSpace(char)|Returns true if the specified char is
+|javax.xml.bind.annotation.adapters.NormalizedStringAdapter.marshal(String)|No-op.
+|javax.xml.bind.annotation.adapters.NormalizedStringAdapter.unmarshal(String)|Replace any tab, CR, and LF by a whitespace chara
+
+*javax.xml.bind.annotation.adapters.NormalizedStringAdapter_Description*
+
+(|javax.xml.bind.annotation.adapters.XmlAdapter|) to handle xs:normalizedString. 
+
+This adapter removes leading and trailing whitespaces, then replace any tab, CR, and LF by a whitespace character ' '. 
+
+
+
+*javax.xml.bind.annotation.adapters.NormalizedStringAdapter()*
+
+public NormalizedStringAdapter()
+
+
+
+
+*javax.xml.bind.annotation.adapters.NormalizedStringAdapter.isWhiteSpaceExceptSpace(char)*
+
+protected static boolean isWhiteSpaceExceptSpace(char ch)
+
+Returns true if the specified char is a white space character but not 0x20. 
+
+
+
+*javax.xml.bind.annotation.adapters.NormalizedStringAdapter.marshal(String)*
+
+public |java.lang.String| marshal(java.lang.String s)
+
+No-op. 
+
+Just return the same string given as the parameter. 
+
+
+
+*javax.xml.bind.annotation.adapters.NormalizedStringAdapter.unmarshal(String)*
+
+public |java.lang.String| unmarshal(java.lang.String text)
+
+Replace any tab, CR, and LF by a whitespace character ' ', as specified in the whitespace facet 'replace' 
+
+
+
+

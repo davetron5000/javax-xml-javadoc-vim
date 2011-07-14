@@ -1,0 +1,123 @@
+*javax.xml.ws.soap.AddressingFeature* *AddressingFeature* This feature represents the use of WS-Addressing with either
+ the SOAP
+
+public final class AddressingFeature
+  extends    |javax.xml.ws.WebServiceFeature|
+
+|javax.xml.ws.soap.AddressingFeature_Description|
+|javax.xml.ws.soap.AddressingFeature_Fields|
+|javax.xml.ws.soap.AddressingFeature_Constructors|
+|javax.xml.ws.soap.AddressingFeature_Methods|
+
+================================================================================================================================
+
+*javax.xml.ws.soap.AddressingFeature_Fields*
+|java.lang.String_javax.xml.ws.soap.AddressingFeature.ID|
+|boolean_javax.xml.ws.soap.AddressingFeature.required|
+
+*javax.xml.ws.soap.AddressingFeature_Constructors*
+|javax.xml.ws.soap.AddressingFeature()|Create an AddressingFeature.
+|javax.xml.ws.soap.AddressingFeature(boolean)|Create an AddressingFeature
+|javax.xml.ws.soap.AddressingFeature(boolean,boolean)|Create an AddressingFeature
+
+*javax.xml.ws.soap.AddressingFeature_Methods*
+|javax.xml.ws.soap.AddressingFeature.getID()|
+|javax.xml.ws.soap.AddressingFeature.isRequired()|Gets the boolean value used to determine if WS-Addressing  headers MUST be pr
+
+*javax.xml.ws.soap.AddressingFeature_Description*
+
+This feature represents the use of WS-Addressing with either the SOAP 1.1/HTTP or SOAP 1.2/HTTP binding. Using this feature 
+with any other binding is NOT required. 
+
+Enabling this feature on the client will cause the JAX-WS runtime to include WS-Addressing headers in SOAP messages. 
+
+If the web service developer has not explicitly enabled this feature, it MAY be automatically enabled if the associated WSDL 
+enables WS-Addressing with an implementation recognized WSDL extension element. However, in this version of JAX-WS, there is no 
+standard WSDL extension that a client can rely on to automatically enable WS-Addressing, nor is there a standard default value 
+specified for WS-Addressing Action headers. 
+
+To write a portable endpoint and its corresponding client with this version of JAX-WS, an endpoint MUST explicitly specify what 
+WS-Addressing Actions are to be used via the (|javax.xml.ws.Action|) and (|javax.xml.ws.FaultAction|) annotations. The client 
+MUST explicitly enable addresssing via this AddressingFeature, and for each invocation, the client MUST explicitly set the 
+(|javax.xml.ws.BindingProvider|) . After the W3C WG on WS-Addressing has specified how the use of WS-Addressing is specified in 
+the WSDL, and what the default value must be for Action headers, a future version of JAX-WS will remove these requirements. 
+
+See (|javax.xml.ws.RespectBindingFeature|) for more information on required WSDL extensions. 
+
+The following describes the effects of this feature with respect to be enabled or disabled: 
+
+ENABLED: In this Mode, WS-Addressing will be enabled. At runtime, WS-Addressing headers MUST be consumed by the receiver and 
+produced by the sender even if the WSDL declares otherwise. The mustUnderstand="0" attribute MUST be used on the WS-Addressing 
+headers. DISABLED: In this Mode, WS-Addressing will be disabled even if an associated WSDL specifies otherwise. At runtime, 
+WS-Addressing headers MUST NOT be used. WS-Addressing may be explicitly disabled to prevent a JAX-WS implementation from 
+consuming and producing WS-Addressing headers. If an application has implemented WS-Addressing itself, it MUST explicitly 
+disable this feature. Not doing so may break compatibility with future versions of JAX-WS. 
+
+The (|javax.xml.ws.soap.AddressingFeature|) property can be used to specify if WS-Addressing headers MUST be present on 
+incoming messages. This property only has meaning when used on the endpoint and has no affect when used on the client. By 
+default the required property is false. 
+
+See Web Services Addressing - Core and Web Services Addressing 1.0 - SOAP Binding for more information on WS-Addressing. 
+
+
+
+*java.lang.String_javax.xml.ws.soap.AddressingFeature.ID*
+
+Constant value identifying the AddressingFeature 
+
+
+*boolean_javax.xml.ws.soap.AddressingFeature.required*
+
+Property for the required feature parameter. When WS-Addressing is enabled, the value of this property will be used to specify 
+if WS-Addressing headers MUST be present on incoming messages. This property only has meaning on the endpoint and has no affect 
+when used on the client. 
+
+
+
+*javax.xml.ws.soap.AddressingFeature()*
+
+public AddressingFeature()
+
+Create an AddressingFeature. The instance created will be enabled. 
+
+
+*javax.xml.ws.soap.AddressingFeature(boolean)*
+
+public AddressingFeature(boolean enabled)
+
+Create an AddressingFeature 
+
+    enabled - specifies whether this feature should be enabled or not. 
+
+*javax.xml.ws.soap.AddressingFeature(boolean,boolean)*
+
+public AddressingFeature(
+  boolean enabled,
+  boolean required)
+
+Create an AddressingFeature 
+
+    enabled - specifies whether this feature should be enabled or not. 
+    required - specifies whether WS-Addressing headers MUST be present on incoming messages. This property only has meaning on the endpoint 
+       and has no affect when used on the client. 
+
+*javax.xml.ws.soap.AddressingFeature.getID()*
+
+public |java.lang.String| getID()
+
+
+
+
+
+*javax.xml.ws.soap.AddressingFeature.isRequired()*
+
+public boolean isRequired()
+
+Gets the boolean value used to determine if WS-Addressing headers MUST be present on incoming messages. This property only has 
+meaning on the endpoint, and has no affect when used on the client. 
+
+
+
+    Returns: the current required value 
+
+

@@ -1,0 +1,23 @@
+*javax.xml.ws.WebServiceRef* *WebServiceRef* The WebServiceRef annotation is used to
+  define a reference to a web service and
+ 
+
+public interface class WebServiceRef
+
+  implements |java.lang.annotation.Annotation|
+
+|javax.xml.ws.WebServiceRef_Description|
+|javax.xml.ws.WebServiceRef_Fields|
+|javax.xml.ws.WebServiceRef_Constructors|
+|javax.xml.ws.WebServiceRef_Methods|
+
+================================================================================================================================
+
+*javax.xml.ws.WebServiceRef_Description*
+
+The WebServiceRef annotation is used to define a reference to a web service and (optionally) an injection target for it. 
+
+Web service references are resources in the Java EE 5 sense. 
+
+
+

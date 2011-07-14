@@ -1,0 +1,25 @@
+*javax.xml.ws.Action* *Action* The Action annotation allows explicit association of a 
+ WS-Addressing Action message addressing 
+
+public interface class Action
+
+  implements |java.lang.annotation.Annotation|
+
+|javax.xml.ws.Action_Description|
+|javax.xml.ws.Action_Fields|
+|javax.xml.ws.Action_Constructors|
+|javax.xml.ws.Action_Methods|
+
+================================================================================================================================
+
+*javax.xml.ws.Action_Description*
+
+The Action annotation allows explicit association of a WS-Addressing Action message addressing property with input, output, and 
+fault messages of the mapped WSDL operation. 
+
+In this version of JAX-WS there is no standard way to specify Action values in a WSDL and there is no standard default value. 
+It is intended that, after the W3C WG on WS-Addressing has defined these items in a recommendation, a future version of JAX-WS 
+will require the new standards. 
+
+
+

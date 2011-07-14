@@ -1,0 +1,20 @@
+*javax.xml.ws.WebServiceRefs* *WebServiceRefs* The WebServiceRefs annotation allows
+ multiple web service references to be decla
+
+public interface class WebServiceRefs
+
+  implements |java.lang.annotation.Annotation|
+
+|javax.xml.ws.WebServiceRefs_Description|
+|javax.xml.ws.WebServiceRefs_Fields|
+|javax.xml.ws.WebServiceRefs_Constructors|
+|javax.xml.ws.WebServiceRefs_Methods|
+
+================================================================================================================================
+
+*javax.xml.ws.WebServiceRefs_Description*
+
+The WebServiceRefs annotation allows multiple web service references to be declared at the class level. 
+
+
+

@@ -1,0 +1,27 @@
+*javax.xml.ws.soap.MTOM* *MTOM* This feature represents the use of MTOM with a 
+ web service.
+
+public interface class MTOM
+
+  implements |java.lang.annotation.Annotation|
+
+|javax.xml.ws.soap.MTOM_Description|
+|javax.xml.ws.soap.MTOM_Fields|
+|javax.xml.ws.soap.MTOM_Constructors|
+|javax.xml.ws.soap.MTOM_Methods|
+
+================================================================================================================================
+
+*javax.xml.ws.soap.MTOM_Description*
+
+This feature represents the use of MTOM with a web service. 
+
+The following describes the affects of this feature with respect to being enabled or disabled: 
+
+ENABLED: In this Mode, MTOM will be enabled. DISABLED: In this Mode, MTOM will be disabled 
+
+The (|javax.xml.ws.soap.MTOM|) property can be used to set the threshold value used to determine when binary data should be XOP 
+encoded. 
+
+
+
